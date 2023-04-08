@@ -1,0 +1,8 @@
+# loop that acts as a while 
+loop(i<1 | i\1){	  
+ ag.move(ea,0,0,world);  
+ag.move(no,0,1,world);  
+ag.move(we,1,1,world);  
+ag.move(so,1,0,world);  
+i = i+1; 
+} 
