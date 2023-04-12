@@ -55,7 +55,9 @@ def check_punctuation(pun):
 # check for identifier + append to symbol table(if not there already):
 def check_id(id):
     if re.match("^[a-zA-Z][_a-zA-z0-9]{0,20}$",id):
-        if(id not in symbol_table):
+        if id in symbol_table:
+            return 'ID'
+        else:
             symbol_table.append(id)
             id_list.append(id)
             return 'ID'
@@ -87,7 +89,7 @@ def print_to_screen_file(file,line,token,inputy): # inputy is the lexeme
 #file:
 global line #global variable for line number
 line = 1 
-infp = open("test2.txt", "r")#opening the test files
+infp = open("/Users/abdelhadimarjane/Documents/AUI_Classes/spring 2023/language and compilers/LanguagesRepository/project_part2 2/lexer_folder/testfolder - Copy/Test2.txt", "r")#opening the test files
 output_file = open("output_token.txt", "w")#opening the output file
      
     #case: space
