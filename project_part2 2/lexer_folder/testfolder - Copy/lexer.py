@@ -7,6 +7,7 @@ Code, Compile, Run and Debug online from anywhere in world.
 '''
 
 import re; 
+import os 
 id_list=[]
 delimiter_list =['{','}']
 #list with reserved words 
@@ -27,6 +28,14 @@ lexeme_token_reserved={'loop':'LOOP','if':'IF','else':'ELSE','defining':'DEFINE'
 lexeme_token_operator={'#':'COM','+':'ADD','-':'SUB','*':'MUL','/':'DIV','=':'ASSIGN','$':'EQU','<':'SMALL','\\':'SMALLQUI','!':'NOTEQUI','|':'OR','&':'AND','!!':'NOT','~':'CONCA'}
 lexeme_token_punctuation={'.':'DOT',',':'SEMI',';':'ENDL','(':'OPPARENT',')':'CLPARENT','{':'OPBRACE','}':'CLBRACE','[':'OPBRACKET',']':'CLBRACKET',';':'NEWL'}
 #matching function: they check and either return error or token and token number
+
+# Get the directory name of the script
+dir_name = os.path.dirname(__file__) 
+
+# Join the directory name and output file name to get the full path of the output file
+output_file_path = os.path.join(dir_name, 'token.txt')
+
+
 # check for number:
 def check_num(digit):
     if re.match("^(0|[1-9][0-9]*)$",digit):
@@ -90,7 +99,8 @@ def print_to_screen_file(file,line,token,inputy): # inputy is the lexeme
 global line #global variable for line number
 line = 1 
 infp = open("/Users/abdelhadimarjane/Documents/AUI_Classes/spring 2023/language and compilers/LanguagesRepository/project_part2 2/lexer_folder/testfolder - Copy/Test2.txt", "r")#opening the test files
-output_file = open("output_token.txt", "w")#opening the output file
+
+output_file = open(output_file_path, 'w')
      
     #case: space
 while 1==1: #while loop to read the file character by character 
