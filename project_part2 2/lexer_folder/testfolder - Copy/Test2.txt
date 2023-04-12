@@ -1,8 +1,85 @@
+BEGIN; 
+#Test suites for the language (need to make sure that am using all of them ) 
+defining move(dir,x_agent,y_agent,world){ 
+if(dir $ no){ 
+if(x < height ){ 
+world[x+1,y]=ag ~ world[x+1, y];  
+} 
+else{ 
+RETURN bu; 
+} 
+} 
+if(dir $ so){ 
+if(x > 0 ){ 
+world[x-1, y] = ag  ~ world[x-1,y]; 
+} 
+else{ 
+RETURN bu; 
+} 
+} 
+if(dir $ we){ 
+if(y > 0 ){  
+world[x, y-1] = ag ~ world[x, y-1]; 
+} 
+else{ 
+RETURN bu ; 
+} 
+} 
+if(dir $ ea){ 
+if(y < width ){ 
+world[x, y+1] = ag~ world[x, y+1]; 
+} 
+else{ 
+RETURN bu ; 
+} 
+} 
+} 
+defining initialize(x,y){ 
+# they need to be the same 
+if(x !! y){  
+RETURN FALSE; 
+} 
+else { 
+# initialize the array size 
+world[x][y] ; 	 
+# the first bracket is for rows the second is for columns 
+world[0][0] = ag;  
+world [0][1] = pt; 
+world[0][2] = br; 
+world[3][1] = st; 
+world[2][2] = st; 
+world[3][2] = wu; 
+world[3][3] = em;	 
+world[0][2] = go; 
+world[0][3] = gl; 
+RETURN TRUE; 
+} 
+} 
+i = 0; 
+a  = 0; 
+total = 4; 
+#initialize the array size 
+initialize(4,4);  
+total = total / 4; 
+total = total - 1; 
+total = total + 1; 
+total = total * 1; 
 # loop that acts as a while 
-loop(i<1 | i\1){	  
+loop(i<1| i\1){	  
  ag.move(ea,0,0,world);  
 ag.move(no,0,1,world);  
 ag.move(we,1,1,world);  
 ag.move(so,1,0,world);  
 i = i+1; 
 } 
+if ( i !! a){ 
+RETURN sc; 
+} 
+END; 
+
+ 
+
+ 
+ 
+
+ 
