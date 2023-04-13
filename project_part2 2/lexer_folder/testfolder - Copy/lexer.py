@@ -74,7 +74,7 @@ def check_id(id):
         return 'illegal identifier'
 # check for function identifier + append to symbol table(if not already there):
 def check_fun_id(id): 
-    if re.match("^[a-zA-Z][_a-zA-z0-9]{0,20}$",id):
+    if re.match("^[a-zA-Z][_a-zA-Z0-9]{0,20}$",id):
         if (id not in symbol_table ):
             symbol_table.append(id) 
             id_list.append(id)
