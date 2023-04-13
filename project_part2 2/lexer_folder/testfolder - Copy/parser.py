@@ -2,7 +2,7 @@
 
 
 def get_tokens():
-    with open('project_part2 2/lexer_folder/testfolder - Copy/token.txt', 'r') as f:
+    with open('/Users/abdelhadimarjane/Documents/AUI_Classes/spring 2023/language and compilers/LanguagesRepository/project_part2 2/lexer_folder/testfolder - Copy/token.txt', 'r') as f:
         tokens = [tuple(line.split()[:3]) for line in f]
     return tokens
 
@@ -26,13 +26,14 @@ def consume_token(): #returns the next token and consumes it increments the inde
         return None
 
 def parse_language():
-    parse_main_body()
-    parse_functions()
-    print("Parsing complete")
+  #parse_functions()
+  parse_main_body()
+  print("Parsing complete")
 
 def parse_functions():
-    while peek_token()[2] == 'DEFINE':
-        parse_function()
+  peek_token()[2] == 'DEFINE'
+#parse_function()
+
 
 def parse_function():
     consume_token('DEFINE')
@@ -47,21 +48,22 @@ def parse_main_body(): # this is done it works well
         raise Exception("Syntax error: expected BEGIN in line {} ".format(peek_token()[0]))
     else :
         consume_token()
-    if peek_token()[2] != 'NEWL':
-        raise Exception ("Syntax error: expected ; in line {} ".format(peek_token()[0]))
-    else:
-        consume_token()
-        statements = parse_statements() # this is the problem i need to work on it 
-    if peek_token()[2] != 'END':
-        raise Exception ("Syntax error: expected END in line {} ".format(peek_token()[0]))
-    else:
-        consume_token()
-    if peek_token()[2] != 'NEWL':
-        raise Exception ("Syntax error: expected ; in line {} ".format(peek_token()[0]))
-    else:
-        consume_token()
-        print("Parsing complete")
-        
+        if peek_token()[2] != 'NEWL':
+            raise Exception ("Syntax error: expected ; in line {} ".format(peek_token()[0]))
+        else:
+            consume_token()
+            statements = parse_statements() # this is the problem i need to work on it 
+            if peek_token()[2] != 'END':
+                raise Exception ("Syntax error: expected END in line {} ".format(peek_token()[0]))
+            else:
+                consume_token()
+                if peek_token()[2] != 'NEWL':
+                    raise Exception ("Syntax error: expected ; in line {} ".format(peek_token()[0]))
+                else:
+                    consume_token()
+                    print("Parsing complete")
+                    return statements
+
 def parse_statements():
     while peek_token()[2] not in ['END', 'ELSE']:
         parse_statement()
@@ -70,7 +72,7 @@ def parse_statement():
     token_type = peek_token()[2]
     if token_type == 'ID2':
         parse_function_call()
-    elif token_type == 'WHILE':
+    elif token_type == 'LOOP':
         parse_loop()
     elif token_type == 'IF':
         parse_if_statement()
@@ -109,7 +111,7 @@ def parse_loop():
     parse_expr()
     consume_token('DO')
     parse_statements()
-    consume_token('ENDL')
+    consume_token('NEWL')
 
 def parse_if_statement():
     consume_token('IF')
@@ -142,11 +144,11 @@ def parse_array_index():
 
 def parse_return():
     consume_token('RETURN')
-    if peek_token()[2] != 'ENDL':
+    if peek_token()[2] != 'NEWL':
         parse_value()
 
-def parse_value():
-    token_type = peek_token()[2]
+def parse_valu():
+    token_type = peek_token()[2] # it reads the next token without consuming it 
     if token_type == 'NUM':
         consume_token('NUM')
     elif token_type == 'ID':
@@ -155,147 +157,43 @@ def parse_value():
             parse_array_index()
     else:
         raise Exception("Syntax error: unexpected token {}".format(token_type))
-
+def parse_value():
+    consume_token()
+    if peek_token()[2] == 'NUM':
+        consume_token()
+    else : 
+        raise Exception("Syntax error: expected NUM in line {} ".format(peek_token()[0]))       
+                    
 def parse_arith_op():
-    parse_value()
-    consume_token(peek_token()[2])
-    parse_value()
-
+    parse_variable()
+    if peek_token()[2] == 'ASSIGN':
+        parse_value()
+        parse_operation()
+        if peek_token()[2] == 'NEWL':
+            consume_token()
+        else : 
+            raise Exception("Syntax error: expected NEWL in line {} ".format(peek_token()[0]))
+        
+        
+def parse_operation():
+    consume_token()
+    if peek_token()[2] in ['ADD', 'SUB', 'MUL', 'DIV']:
+        consume_token()
+        parse_value()
+        
 def parse_expr():
     parse_value()
     while peek_token()[2] in ['ADD', 'SUB', 'MUL', 'DIV']:
         consume_token(peek_token()[2])
         parse_value()
-
+def parse_variable():
+    if(peek_token()[2] == 'ID'):
+        consume_token()
+    else:
+        raise Exception("Syntax error: expected ID in line {} ".format(peek_token()[0]))
+    
 parse_language()
-        
+
 # lfksdhjfmlsqkjdfmlsqdkjfmldsqkjfmlqsdkjfmlsqkjdfmlsqdkjfmlqsdkjfmlqsdkjfmldsqkjfmlqskjfdmqlskjfmlqsdkjfq
 #mlkjsdfmlqskdjfmlkqsdjfmlqsdkjfmlkqdsjfmlkqsdjfmlksqdjfmlkqdsjfmlkjqsdfmlkjqsdmflkjqsdmlfkjqsdmlfkjqsdmlkfj
 #lorenze mlkjsdfmlksjdqfmlsqdkjfmdlsqkjfmlqsdkjfmlqsdkjfmqlsdkjfmqsdlkjfmlqsdkjfmqsdlkjfmqlsdkdjfmlqsdkjflqdskj
-def language():
-    functions()
-    main_body()
-
-def main_body():
-    match("BEGIN")
-    statements()
-    match("END")
-
-def statements():
-    if current_token[2] in ["ID2", "IF", "FOR", "WHILE", "VAR", "RETURN", "OP"]:
-        statement()
-        statements()
-
-def statement():
-    different_statement()
-    match("ENDL")
-
-def different_statement():
-    if current_token[2] == "ID2":
-        function_call()
-    elif current_token[2] == "IF":
-        if_statement()
-    elif current_token[2] in ["FOR", "WHILE"]:
-        loop()
-    elif current_token[2] == "VAR":
-        assignment()
-    elif current_token[2] == "OP":
-        array()
-    elif current_token[2] == "RETURN":
-        return_statement()
-    elif current_token[2] in ["ADD", "SUB", "MUL", "DIV"]:
-        arithmetic_operation()
-
-def functions():
-    if current_token[2] == "DEFINE":
-        function()
-        functions()
-
-def function():
-    match("DEFINE")
-    match("ID")
-    arguments()
-    match("OPCURL")
-    statements()
-    match("CLCURL")
-
-def arguments():
-    if current_token[2] == "ID":
-        match("ID")
-        arguments()
-
-def return_statement():
-    match("RETURN")
-    if current_token[2] != "ENDL":
-        value()
-
-def function_call():
-    match("ID2")
-    arguments()
-
-def if_statement():
-    match("IF")
-    value()
-    match("THEN")
-    statements()
-    if current_token[2] == "ELSE":
-        match("ELSE")
-        statements()
-    match("ENDIF")
-
-def loop():
-    if current_token[2] == "FOR":
-        for_loop()
-    elif current_token[2] == "WHILE":
-        while_loop()
-
-def for_loop():
-    match("FOR")
-    match("ID")
-    match("ASSIGN")
-    value()
-    match("TO")
-    value()
-    if current_token[2] == "STEP":
-        match("STEP")
-        value()
-    match("DO")
-    statements()
-    match("ENDDO")
-
-def while_loop():
-    match("WHILE")
-    value()
-    match("DO")
-    statements()
-    match("ENDDO")
-
-def assignment():
-    match("VAR")
-    match("ID")
-    match("ASSIGN")
-    value()
-
-def array():
-    match("OP")
-    value()
-    match("CP")
-
-def value():
-    if current_token[2] == "ID":
-        match("ID")
-    elif current_token[2] == "INT":
-        match("INT")
-    elif current_token[2] == "FLOAT":
-        match("FLOAT")
-    elif current_token[2] == "BOOL":
-        match("BOOL")
-    elif current_token[2] == "OP":
-        value()
-        match("CP")
-
-def match(token_type):
-    if current_token[2] == token_type:
-        consume_token()
-    else:
-        error()
