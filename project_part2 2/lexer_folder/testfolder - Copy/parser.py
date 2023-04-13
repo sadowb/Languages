@@ -81,28 +81,20 @@ def parse_statements():
   parse_statement()    
   parse_statements()
 
-def parse_statement():
-  if parse_statement_w_endl() == True:
-    if peek_token()[2] != 'NEWL':
-      raise Exception ("Syntax error: expected ; in line {} ".format(peek_token()[0]))
+def parse_statement(): #not sure, have to fix it. but how?
+  parse_statement_w_endl():
+    if peek_token()[2] == 'NEWL':
+      consume_token      
     else:
-      consume_token()
+      raise Exception ("Syntax error: expected ; in line {} ".format(peek_token()[0]))
   parse_statement_wo_endl()
       
 
 def parse_statement_w_endl():
-  status = False
-  if parse_function_call() == True:
-    status = True
-  if parse_assignment() == True:
-    status = True  
-  if parse_array() == True:
-    status = True
-  if parse_return() == True:
-    status = True
-  if parse_arith_op() == True:
-    status = True
-  return status
+  parse_function_call()
+  parse_assignment()
+  parse_return()
+  parse_arith_op()
 
 def parse_statement_wo_endl():
   parse_loop()
@@ -139,16 +131,34 @@ def parse_value():
 
 def parse_condition():
   if peek_token()[2] != 'OPPARENT':
-    raise Exception ("Syntax error: expected , in line {} ".format(peek_token()[0]))
+    raise Exception ("Syntax error: expected ( in line {} ".format(peek_token()[0]))
   else:
     consume_token()
-    parse_comparison()
-  
-  
-  
-      
+    parse_comparisons()
+    while peek_token()[2] == 'AND' or peek_token()[2] == 'OR' or peek_token()[2] == 'NOT':
+      parse_logic_op()
+      parse_comparisons()
+      if peek_token()[2] != 'CLPARENT':
+        raise Exception ("Syntax error: expected ) in line {} ".format(peek_token()[0]))
+      else:
+        consume_token()
 
+def parse_comparisons():
+  parse_value()
+  parse_comparison_op()
+  parse_value()
 
+def parse_comparison_op():
+  if peek_token()[2] != 'EQU' or peek_token()[2] != 'SMALL' or peek_token()[2] != 'SMALLQUI' or peek_token()[2] != 'NOTEQUI':
+    raise Exception ("Syntax error: expected $ or < or \\ or ! in line {} ".format(peek_token()[0]))
+  else:
+    consume_token()
+
+def parse_logic_op():
+  if peek_token()[2] != 'AND' or peek_token()[2] != 'OR' or peek_token()[2] != 'NOT':
+    raise Exception ("Syntax error: expected & or | or !! in line {} ".format(peek_token()[0]))
+  else:
+    consume_token()
 
 def parse_function_call():
   if peek_token()[2] != 'ID2':
@@ -157,16 +167,115 @@ def parse_function_call():
       consume_token()
       parse_arguments();
 
-def parse_loop():
-
-
 def parse_if_statement():
+  if peek_token()[2] != 'IF':
+    raise Exception ("Syntax error: expected IF in line {} ".format(peek_token()[0]))
+  else:
+    consume_token()
+    parse_conditions()
+    if peek_token()[2] != 'OPCURL':
+      raise Exception ("Syntax error: expected { in line {} ".format(peek_token()[0]))
+    else:
+      consume_token()
+      parse_statements()
+      if peek_token()[2] != 'CLCURL':
+        raise Exception ("Syntax error: expected } in line {} ".format(peek_token()[0]))
+      else:
+        consume_token()
+        parse_else_statement()
+
+def else_statement():
+  if peek_token()[2] != 'ELSE':
+    raise Exception ("Syntax error: expected ELSE in line {} ".format(peek_token()[0]))
+  else:
+    consume_token()
+    if peek_token()[2] != 'OPCURL':
+      raise Exception ("Syntax error: expected { in line {} ".format(peek_token()[0]))
+    else:
+      consume_token()
+      parse_statements()
+      if peek_token()[2] != 'CLCURL':
+        raise Exception ("Syntax error: expected } in line {} ".format(peek_token()[0]))
+      else:
+        consume_token()
+
 
 
 def parse_assignment():
+  parse_identifier()
+  if peek_token()[2] != 'ASSIGN':
+    raise Exception ("Syntax error: expected = in line {} ".format(peek_token()[0]))
+  else:
+    consume_token()
+    parse_expression()
 
+def parse_identifier():
+  if peek_token()[2] == 'ID':
+    if peek_token()[2] == ' OPBRACK':
+      parse_array()
+    else:
+      consume_token()
+  else:
+    raise Exception("Syntax error: expected identifier in line {}".format(peek_token()[0]))
 
+def  parse_expression():
+  parse_function_call()
+  parse_value()
+  parse_arith_op()
+  parse_concatenations()
+
+def parse_concatenations(): #need to fix this idk how to do it
+  parse_value()
+  if parse_concatenations()
+
+    
 def parse_array():
+ if peek_token()[2] != 'ID':
+    raise Exception ("Syntax error: expected ID in line {} ".format(peek_token()[0]))
+  else:
+    consume_token()
+    parse_size()
+    parse_size()
+
+def parse_size():
+  if peek_token()[2] != 'OPBRACK':
+    raise Exception ("Syntax error: expected [ in line {} ".format(peek_token()[0]))
+  else:
+    consume_token()
+    if peek_token()[2] != 'NUM':
+      raise Exception ("Syntax error: expected NUM in line {} ".format(peek_token()[0]))
+    else:
+      consume_token()
+      if peek_token()[2] != 'CLBRACK':
+        raise Exception ("Syntax error: expected ] in line {} ".format(peek_token()[0]))
+      else:
+        consume_token()
+
+def parse_loop():
+  if peek_token()[2] != 'LOOP':
+    raise Exception ("Syntax error: expected LOOP in line {} ".format(peek_token()[0]))
+  else:
+    consume_token()
+    parse_conditions()
+    if peek_token()[2] != 'OPCURL':
+      raise Exception ("Syntax error: expected { in line {} ".format(peek_token()[0]))
+    else:
+      consume_token()
+      parse_statements()
+      if peek_token()[2] != 'CLCURL':
+        raise Exception ("Syntax error: expected } in line {} ".format(peek_token()[0]))
+      else:
+        consume_token()
+
+
+  
+
+
+
+
+
+
+
 
 
 def parse_return():
@@ -182,11 +291,6 @@ def parse_arith_op():
     consume_token(peek_token()[2])
     parse_value()
 
-def parse_expr():
-    parse_value()
-    while peek_token()[2] in ['ADD', 'SUB', 'MUL', 'DIV']:
-        consume_token(peek_token()[2])
-        parse_value()
 
 parse_language()
         
