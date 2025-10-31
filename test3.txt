@@ -1,0 +1,88 @@
+#functions and function rules check
+defining move(dir, x_agent, y_agent, world){ 
+#if_statement check
+if(dir $ no){
+if(x < height){
+#arrays, assignment, next line, and concatenation check
+world[1][y]=ag ~ world[1][y];
+}
+#else check
+else{
+#return check
+RETURN bu;
+}
+}
+if(dir $ so){ 
+if(x < 0 ){ 
+world[2][y] = ag  ~ world[0][y]; 
+} 
+else{ 
+RETURN bu; 
+} 
+} 
+if(dir $ we){ 
+if(y < 0 ){  
+world[x][y] = ag ~ world[x][5]; 
+} 
+else{ 
+RETURN bu ; 
+} 
+} 
+if(dir $ ea){ 
+if(y < width ){ 
+world[x][1] = ag~ world[x][6]; 
+} 
+else{ 
+RETURN bu ; 
+} 
+} 
+}
+
+defining initialize(x,y){ 
+# they need to be the same 
+if(x ! y){  
+RETURN FALSE; 
+} 
+else { 
+# initialize the array size 
+world[x][y] ; 	 
+# the first bracket is for rows the second is for columns 
+world[0][0] = ag;  
+world [0][1] = pt; 
+world[0][2] = br; 
+world[3][1] = st; 
+world[2][2] = st; 
+world[3][2] = wu; 
+world[3][3] = em;	 
+world[0][2] = go; 
+world[0][3] = gl; 
+RETURN TRUE; 
+} 
+} 
+#checks that the main body starts with BEGIN
+BEGIN; 
+i = 0; 
+a  = 0; 
+total = 4; 
+#checks function call
+initialize(4,4);  
+#arithmetic check
+total = total / 4; 
+total = total - 1; 
+total = total + 1; 
+total = total * 1; 
+total = total * total * total ;
+# loop check
+loop(i<1| i\1){	  
+move(ea,0,0,world);  
+move(no,0,1,world);  
+agmove(we,1,1,world);  
+move(so,1,0,world);  
+i = i+1; 
+} 
+#checks operators
+if ( i ! a !! a < 1){ 
+RETURN sc; 
+} 
+#checks main body ends with END
+END; 

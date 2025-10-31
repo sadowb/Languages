@@ -1,0 +1,577 @@
+language
+├── DEFINE
+├── ID
+│   └── move
+├── OPPARENT
+├── ID
+│   └── dir
+├── COMMA
+├── ID
+│   └── x_agent
+├── COMMA
+├── ID
+│   └── y_agent
+├── COMMA
+├── ID
+│   └── world
+├── OPCURL
+├── statements_wo_endl
+│   └── statements_wo_endl
+│       ├── IF
+│       ├── OPPARENT
+│       ├── ID
+│       │   └── dir
+│       ├── EQU
+│       ├── NO
+│       ├── CLPARENT
+│       ├── OPCURL
+│       ├── statements_wo_endl
+│       │   └── statements_wo_endl
+│       │       ├── IF
+│       │       ├── OPPARENT
+│       │       ├── ID
+│       │       │   └── x
+│       │       ├── SMALL
+│       │       ├── ID
+│       │       │   └── height
+│       │       ├── CLPARENT
+│       │       ├── OPCURL
+│       │       ├── statement_w_endl
+│       │       │   └── statement_w_endl
+│       │       │       ├── ID
+│       │       │       │   └── world
+│       │       │       ├── ID
+│       │       │       │   └── world
+│       │       │       ├── OPBRACKET
+│       │       │       ├── NUM
+│       │       │       ├── OPBRACKET
+│       │       │       ├── ID
+│       │       │       ├── ASSIGN
+│       │       │       ├── AG
+│       │       │       ├── CONCA
+│       │       │       ├── OPBRACKET
+│       │       │       ├── NUM
+│       │       │       ├── OPBRACKET
+│       │       │       └── ID
+│       │       ├── NEWL
+│       │       ├── CLCURL
+│       │       ├── ELSE
+│       │       ├── OPCURL
+│       │       ├── statement_w_endl
+│       │       │   └── statement_w_endl
+│       │       │       └── RETURN
+│       │       │           └── BU
+│       │       ├── NEWL
+│       │       └── CLCURL
+│       └── CLCURL
+├── statements_wo_endl
+│   └── statements_wo_endl
+│       ├── IF
+│       ├── OPPARENT
+│       ├── ID
+│       │   └── dir
+│       ├── EQU
+│       ├── SO
+│       ├── CLPARENT
+│       ├── OPCURL
+│       ├── statements_wo_endl
+│       │   └── statements_wo_endl
+│       │       ├── IF
+│       │       ├── OPPARENT
+│       │       ├── ID
+│       │       │   └── x
+│       │       ├── SMALL
+│       │       ├── NUM
+│       │       │   └── 0
+│       │       ├── CLPARENT
+│       │       ├── OPCURL
+│       │       ├── statement_w_endl
+│       │       │   └── statement_w_endl
+│       │       │       ├── ID
+│       │       │       │   └── world
+│       │       │       ├── ID
+│       │       │       │   └── world
+│       │       │       ├── OPBRACKET
+│       │       │       ├── NUM
+│       │       │       ├── OPBRACKET
+│       │       │       ├── ID
+│       │       │       ├── ASSIGN
+│       │       │       ├── AG
+│       │       │       ├── CONCA
+│       │       │       ├── OPBRACKET
+│       │       │       ├── NUM
+│       │       │       ├── OPBRACKET
+│       │       │       └── ID
+│       │       ├── NEWL
+│       │       ├── CLCURL
+│       │       ├── ELSE
+│       │       ├── OPCURL
+│       │       ├── statement_w_endl
+│       │       │   └── statement_w_endl
+│       │       │       └── RETURN
+│       │       │           └── BU
+│       │       ├── NEWL
+│       │       └── CLCURL
+│       └── CLCURL
+├── statements_wo_endl
+│   └── statements_wo_endl
+│       ├── IF
+│       ├── OPPARENT
+│       ├── ID
+│       │   └── dir
+│       ├── EQU
+│       ├── WE
+│       ├── CLPARENT
+│       ├── OPCURL
+│       ├── statements_wo_endl
+│       │   └── statements_wo_endl
+│       │       ├── IF
+│       │       ├── OPPARENT
+│       │       ├── ID
+│       │       │   └── y
+│       │       ├── SMALL
+│       │       ├── NUM
+│       │       │   └── 0
+│       │       ├── CLPARENT
+│       │       ├── OPCURL
+│       │       ├── statement_w_endl
+│       │       │   └── statement_w_endl
+│       │       │       ├── ID
+│       │       │       │   └── world
+│       │       │       ├── ID
+│       │       │       │   └── world
+│       │       │       ├── OPBRACKET
+│       │       │       ├── ID
+│       │       │       ├── OPBRACKET
+│       │       │       ├── ID
+│       │       │       ├── ASSIGN
+│       │       │       ├── AG
+│       │       │       ├── CONCA
+│       │       │       ├── OPBRACKET
+│       │       │       ├── ID
+│       │       │       ├── OPBRACKET
+│       │       │       └── NUM
+│       │       ├── NEWL
+│       │       ├── CLCURL
+│       │       ├── ELSE
+│       │       ├── OPCURL
+│       │       ├── statement_w_endl
+│       │       │   └── statement_w_endl
+│       │       │       └── RETURN
+│       │       │           └── BU
+│       │       ├── NEWL
+│       │       └── CLCURL
+│       └── CLCURL
+├── statements_wo_endl
+│   └── statements_wo_endl
+│       ├── IF
+│       ├── OPPARENT
+│       ├── ID
+│       │   └── dir
+│       ├── EQU
+│       ├── EA
+│       ├── CLPARENT
+│       ├── OPCURL
+│       ├── statements_wo_endl
+│       │   └── statements_wo_endl
+│       │       ├── IF
+│       │       ├── OPPARENT
+│       │       ├── ID
+│       │       │   └── y
+│       │       ├── SMALL
+│       │       ├── ID
+│       │       │   └── width
+│       │       ├── CLPARENT
+│       │       ├── OPCURL
+│       │       ├── statement_w_endl
+│       │       │   └── statement_w_endl
+│       │       │       ├── ID
+│       │       │       │   └── world
+│       │       │       ├── ID
+│       │       │       │   └── world
+│       │       │       ├── OPBRACKET
+│       │       │       ├── ID
+│       │       │       ├── OPBRACKET
+│       │       │       ├── NUM
+│       │       │       ├── ASSIGN
+│       │       │       ├── AG
+│       │       │       ├── CONCA
+│       │       │       ├── OPBRACKET
+│       │       │       ├── ID
+│       │       │       ├── OPBRACKET
+│       │       │       └── NUM
+│       │       ├── NEWL
+│       │       ├── CLCURL
+│       │       ├── ELSE
+│       │       ├── OPCURL
+│       │       ├── statement_w_endl
+│       │       │   └── statement_w_endl
+│       │       │       └── RETURN
+│       │       │           └── BU
+│       │       ├── NEWL
+│       │       └── CLCURL
+│       └── CLCURL
+├── CLCURL
+├── DEFINE
+├── ID
+│   └── initialize
+├── OPPARENT
+├── ID
+│   └── x
+├── COMMA
+├── ID
+│   └── y
+├── OPCURL
+├── statements_wo_endl
+│   └── statements_wo_endl
+│       ├── IF
+│       ├── OPPARENT
+│       ├── ID
+│       │   └── x
+│       ├── NOTEQUI
+│       ├── ID
+│       │   └── y
+│       ├── CLPARENT
+│       ├── OPCURL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       └── RETURN
+│       │           └── FALSE
+│       ├── NEWL
+│       ├── CLCURL
+│       ├── ELSE
+│       ├── OPCURL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── ID
+│       │       ├── OPBRACKET
+│       │       └── ID
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       └── ASSIGN
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       └── ASSIGN
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       └── ASSIGN
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       └── ASSIGN
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       └── ASSIGN
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       └── ASSIGN
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       └── ASSIGN
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       └── ASSIGN
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── ID
+│       │       │   └── world
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       ├── OPBRACKET
+│       │       ├── NUM
+│       │       └── ASSIGN
+│       ├── NEWL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       └── RETURN
+│       │           └── TRUE
+│       ├── NEWL
+│       └── CLCURL
+├── CLCURL
+├── BEGIN
+│   └── NEWL
+├── statement_w_endl
+│   └── statement_w_endl
+│       ├── ID
+│       │   └── i
+│       ├── ASSIGN
+│       └── NUM
+│           └── 0
+├── NEWL
+├── statement_w_endl
+│   └── statement_w_endl
+│       ├── ID
+│       │   └── a
+│       ├── ASSIGN
+│       └── NUM
+│           └── 0
+├── NEWL
+├── statement_w_endl
+│   └── statement_w_endl
+│       ├── ID
+│       │   └── total
+│       ├── ASSIGN
+│       └── NUM
+│           └── 4
+├── NEWL
+├── statement_w_endl
+│   └── statement_w_endl
+│       ├── ID
+│       │   └── initialize
+│       ├── NUM
+│       │   └── 4
+│       ├── COMMA
+│       └── NUM
+│           └── 4
+├── NEWL
+├── statement_w_endl
+│   └── statement_w_endl
+│       ├── ID
+│       │   └── total
+│       ├── ASSIGN
+│       ├── ID
+│       │   └── total
+│       ├── DIV
+│       └── NUM
+│           └── 4
+├── NEWL
+├── statement_w_endl
+│   └── statement_w_endl
+│       ├── ID
+│       │   └── total
+│       ├── ASSIGN
+│       ├── ID
+│       │   └── total
+│       ├── SUB
+│       └── NUM
+│           └── 1
+├── NEWL
+├── statement_w_endl
+│   └── statement_w_endl
+│       ├── ID
+│       │   └── total
+│       ├── ASSIGN
+│       ├── ID
+│       │   └── total
+│       ├── ADD
+│       └── NUM
+│           └── 1
+├── NEWL
+├── statement_w_endl
+│   └── statement_w_endl
+│       ├── ID
+│       │   └── total
+│       ├── ASSIGN
+│       ├── ID
+│       │   └── total
+│       ├── MUL
+│       └── NUM
+│           └── 1
+├── NEWL
+├── statement_w_endl
+│   └── statement_w_endl
+│       ├── ID
+│       │   └── total
+│       ├── ASSIGN
+│       ├── ID
+│       │   └── total
+│       ├── MUL
+│       ├── ID
+│       │   └── total
+│       ├── MUL
+│       └── ID
+│           └── total
+├── NEWL
+├── statements_wo_endl
+│   └── statements_wo_endl
+│       └── LOOP
+│           ├── OPPARENT
+│           ├── ID
+│           │   └── i
+│           ├── SMALL
+│           ├── NUM
+│           │   └── 1
+│           ├── OR
+│           ├── ID
+│           │   └── i
+│           ├── SMALLQUI
+│           ├── NUM
+│           │   └── 1
+│           ├── CLPARENT
+│           ├── OPCURL
+│           ├── statement_w_endl
+│           │   └── statement_w_endl
+│           │       ├── ID
+│           │       │   └── move
+│           │       ├── EA
+│           │       ├── COMMA
+│           │       ├── NUM
+│           │       │   └── 0
+│           │       ├── COMMA
+│           │       ├── NUM
+│           │       │   └── 0
+│           │       ├── COMMA
+│           │       └── ID
+│           │           └── world
+│           ├── NEWL
+│           ├── statement_w_endl
+│           │   └── statement_w_endl
+│           │       ├── ID
+│           │       │   └── move
+│           │       ├── NO
+│           │       ├── COMMA
+│           │       ├── NUM
+│           │       │   └── 0
+│           │       ├── COMMA
+│           │       ├── NUM
+│           │       │   └── 1
+│           │       ├── COMMA
+│           │       └── ID
+│           │           └── world
+│           ├── NEWL
+│           ├── statement_w_endl
+│           │   └── statement_w_endl
+│           │       ├── ID
+│           │       │   └── agmove
+│           │       ├── WE
+│           │       ├── COMMA
+│           │       ├── NUM
+│           │       │   └── 1
+│           │       ├── COMMA
+│           │       ├── NUM
+│           │       │   └── 1
+│           │       ├── COMMA
+│           │       └── ID
+│           │           └── world
+│           ├── NEWL
+│           ├── statement_w_endl
+│           │   └── statement_w_endl
+│           │       ├── ID
+│           │       │   └── move
+│           │       ├── SO
+│           │       ├── COMMA
+│           │       ├── NUM
+│           │       │   └── 1
+│           │       ├── COMMA
+│           │       ├── NUM
+│           │       │   └── 0
+│           │       ├── COMMA
+│           │       └── ID
+│           │           └── world
+│           ├── NEWL
+│           ├── statement_w_endl
+│           │   └── statement_w_endl
+│           │       ├── ID
+│           │       │   └── i
+│           │       ├── ASSIGN
+│           │       ├── ID
+│           │       │   └── i
+│           │       ├── ADD
+│           │       └── NUM
+│           │           └── 1
+│           ├── NEWL
+│           └── CLCURL
+├── statements_wo_endl
+│   └── statements_wo_endl
+│       ├── IF
+│       ├── OPPARENT
+│       ├── ID
+│       │   └── i
+│       ├── NOTEQUI
+│       ├── ID
+│       │   └── a
+│       ├── NOT
+│       ├── ID
+│       │   └── a
+│       ├── SMALL
+│       ├── NUM
+│       │   └── 1
+│       ├── CLPARENT
+│       ├── OPCURL
+│       ├── statement_w_endl
+│       │   └── statement_w_endl
+│       │       └── RETURN
+│       │           └── SC
+│       ├── NEWL
+│       └── CLCURL
+└── END
+    └── NEWL

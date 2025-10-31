@@ -1,0 +1,1135 @@
+language
+├── functions
+│   ├── functionRE
+│   │   ├── DEFINE
+│   │   ├── ID
+│   │   │   └── move
+│   │   ├── parse_functionCall
+│   │   │   ├── OPPARENT
+│   │   │   ├── parse_argument_list
+│   │   │   └── parse_argument_list
+│   │   │       ├── parse_expression
+│   │   │       │   └── ID
+│   │   │       │       └── dir
+│   │   │       └── variable
+│   │   │           ├── COMMA
+│   │   │           ├── parse_expression
+│   │   │           │   └── ID
+│   │   │           │       └── x_agent
+│   │   │           ├── COMMA
+│   │   │           ├── parse_expression
+│   │   │           │   └── ID
+│   │   │           │       └── y_agent
+│   │   │           ├── COMMA
+│   │   │           └── parse_expression
+│   │   │               └── ID
+│   │   │                   └── world
+│   │   ├── OPCURL
+│   │   ├── statement
+│   │   │   └── statement
+│   │   │       ├── statements_wo_endl
+│   │   │       │   └── statements_wo_endl
+│   │   │       │       └── if_statement
+│   │   │       │           └── if_statement
+│   │   │       │               ├── IF
+│   │   │       │               ├── condition
+│   │   │       │               │   ├── OPPARENT
+│   │   │       │               │   ├── comparisons
+│   │   │       │               │   │   ├── Value
+│   │   │       │               │   │   │   └── ID
+│   │   │       │               │   │   │       └── dir
+│   │   │       │               │   │   ├── value
+│   │   │       │               │   │   ├── Comparison_op
+│   │   │       │               │   │   │   └── EQU
+│   │   │       │               │   │   ├── value
+│   │   │       │               │   │   ├── Value
+│   │   │       │               │   │   │   └── NO
+│   │   │       │               │   │   │       └── INVALID NODE
+│   │   │       │               │   │   ├── value
+│   │   │       │               │   │   ├── optional_logic
+│   │   │       │               │   │   └── optional_logic
+│   │   │       │               │   ├── comparisons
+│   │   │       │               │   └── CLPARENT
+│   │   │       │               ├── OPCURL
+│   │   │       │               ├── statement
+│   │   │       │               │   ├── statements_wo_endl
+│   │   │       │               │   │   └── statements_wo_endl
+│   │   │       │               │   │       └── if_statement
+│   │   │       │               │   │           └── if_statement
+│   │   │       │               │   │               ├── IF
+│   │   │       │               │   │               ├── condition
+│   │   │       │               │   │               │   ├── OPPARENT
+│   │   │       │               │   │               │   ├── comparisons
+│   │   │       │               │   │               │   │   ├── Value
+│   │   │       │               │   │               │   │   │   └── ID
+│   │   │       │               │   │               │   │   │       └── x
+│   │   │       │               │   │               │   │   ├── value
+│   │   │       │               │   │               │   │   ├── Comparison_op
+│   │   │       │               │   │               │   │   │   └── SMALL
+│   │   │       │               │   │               │   │   ├── value
+│   │   │       │               │   │               │   │   ├── Value
+│   │   │       │               │   │               │   │   │   └── ID
+│   │   │       │               │   │               │   │   │       └── height
+│   │   │       │               │   │               │   │   ├── value
+│   │   │       │               │   │               │   │   ├── optional_logic
+│   │   │       │               │   │               │   │   └── optional_logic
+│   │   │       │               │   │               │   ├── comparisons
+│   │   │       │               │   │               │   └── CLPARENT
+│   │   │       │               │   │               ├── OPCURL
+│   │   │       │               │   │               ├── statement
+│   │   │       │               │   │               │   ├── statement_w_endl
+│   │   │       │               │   │               │   │   └── statement_w_endl
+│   │   │       │               │   │               │   │       ├── ID
+│   │   │       │               │   │               │   │       │   └── world
+│   │   │       │               │   │               │   │       └── assignmentArray
+│   │   │       │               │   │               │   │           └── AssignmentArray
+│   │   │       │               │   │               │   │               ├── ID
+│   │   │       │               │   │               │   │               │   └── world
+│   │   │       │               │   │               │   │               ├── array
+│   │   │       │               │   │               │   │               │   ├── size
+│   │   │       │               │   │               │   │               │   │   ├── OPBRACKET
+│   │   │       │               │   │               │   │               │   │   ├── NUM
+│   │   │       │               │   │               │   │               │   │   └── CLBRACKET
+│   │   │       │               │   │               │   │               │   └── size
+│   │   │       │               │   │               │   │               │       ├── OPBRACKET
+│   │   │       │               │   │               │   │               │       ├── ID
+│   │   │       │               │   │               │   │               │       └── CLBRACKET
+│   │   │       │               │   │               │   │               ├── ASSIGN
+│   │   │       │               │   │               │   │               └── zorto
+│   │   │       │               │   │               │   │                   ├── AG
+│   │   │       │               │   │               │   │                   │   └── INVALID NODE
+│   │   │       │               │   │               │   │                   ├── CONCA
+│   │   │       │               │   │               │   │                   └── array
+│   │   │       │               │   │               │   │                       ├── size
+│   │   │       │               │   │               │   │                       │   ├── OPBRACKET
+│   │   │       │               │   │               │   │                       │   ├── NUM
+│   │   │       │               │   │               │   │                       │   └── CLBRACKET
+│   │   │       │               │   │               │   │                       └── size
+│   │   │       │               │   │               │   │                           ├── OPBRACKET
+│   │   │       │               │   │               │   │                           ├── ID
+│   │   │       │               │   │               │   │                           └── CLBRACKET
+│   │   │       │               │   │               │   ├── NEWL
+│   │   │       │               │   │               │   └── statement
+│   │   │       │               │   │               ├── statement
+│   │   │       │               │   │               ├── CLCURL
+│   │   │       │               │   │               ├── else_statement
+│   │   │       │               │   │               │   ├── ELSE
+│   │   │       │               │   │               │   ├── OPCURL
+│   │   │       │               │   │               │   ├── statement
+│   │   │       │               │   │               │   │   ├── statement_w_endl
+│   │   │       │               │   │               │   │   │   └── statement_w_endl
+│   │   │       │               │   │               │   │   │       └── return
+│   │   │       │               │   │               │   │   │           └── Return
+│   │   │       │               │   │               │   │   │               └── RETURN
+│   │   │       │               │   │               │   │   │                   └── BU
+│   │   │       │               │   │               │   │   ├── NEWL
+│   │   │       │               │   │               │   │   └── statement
+│   │   │       │               │   │               │   ├── statement
+│   │   │       │               │   │               │   └── CLCURL
+│   │   │       │               │   │               └── else_statement
+│   │   │       │               │   └── statement
+│   │   │       │               ├── statement
+│   │   │       │               ├── CLCURL
+│   │   │       │               └── else_statement
+│   │   │       └── statement
+│   │   │           ├── statements_wo_endl
+│   │   │           │   └── statements_wo_endl
+│   │   │           │       └── if_statement
+│   │   │           │           └── if_statement
+│   │   │           │               ├── IF
+│   │   │           │               ├── condition
+│   │   │           │               │   ├── OPPARENT
+│   │   │           │               │   ├── comparisons
+│   │   │           │               │   │   ├── Value
+│   │   │           │               │   │   │   └── ID
+│   │   │           │               │   │   │       └── dir
+│   │   │           │               │   │   ├── value
+│   │   │           │               │   │   ├── Comparison_op
+│   │   │           │               │   │   │   └── EQU
+│   │   │           │               │   │   ├── value
+│   │   │           │               │   │   ├── Value
+│   │   │           │               │   │   │   └── SO
+│   │   │           │               │   │   │       └── INVALID NODE
+│   │   │           │               │   │   ├── value
+│   │   │           │               │   │   ├── optional_logic
+│   │   │           │               │   │   └── optional_logic
+│   │   │           │               │   ├── comparisons
+│   │   │           │               │   └── CLPARENT
+│   │   │           │               ├── OPCURL
+│   │   │           │               ├── statement
+│   │   │           │               │   ├── statements_wo_endl
+│   │   │           │               │   │   └── statements_wo_endl
+│   │   │           │               │   │       └── if_statement
+│   │   │           │               │   │           └── if_statement
+│   │   │           │               │   │               ├── IF
+│   │   │           │               │   │               ├── condition
+│   │   │           │               │   │               │   ├── OPPARENT
+│   │   │           │               │   │               │   ├── comparisons
+│   │   │           │               │   │               │   │   ├── Value
+│   │   │           │               │   │               │   │   │   └── ID
+│   │   │           │               │   │               │   │   │       └── x
+│   │   │           │               │   │               │   │   ├── value
+│   │   │           │               │   │               │   │   ├── Comparison_op
+│   │   │           │               │   │               │   │   │   └── SMALL
+│   │   │           │               │   │               │   │   ├── value
+│   │   │           │               │   │               │   │   ├── Value
+│   │   │           │               │   │               │   │   │   └── NUM
+│   │   │           │               │   │               │   │   │       └── 0
+│   │   │           │               │   │               │   │   ├── value
+│   │   │           │               │   │               │   │   ├── optional_logic
+│   │   │           │               │   │               │   │   └── optional_logic
+│   │   │           │               │   │               │   ├── comparisons
+│   │   │           │               │   │               │   └── CLPARENT
+│   │   │           │               │   │               ├── OPCURL
+│   │   │           │               │   │               ├── statement
+│   │   │           │               │   │               │   ├── statement_w_endl
+│   │   │           │               │   │               │   │   └── statement_w_endl
+│   │   │           │               │   │               │   │       ├── ID
+│   │   │           │               │   │               │   │       │   └── world
+│   │   │           │               │   │               │   │       └── assignmentArray
+│   │   │           │               │   │               │   │           └── AssignmentArray
+│   │   │           │               │   │               │   │               ├── ID
+│   │   │           │               │   │               │   │               │   └── world
+│   │   │           │               │   │               │   │               ├── array
+│   │   │           │               │   │               │   │               │   ├── size
+│   │   │           │               │   │               │   │               │   │   ├── OPBRACKET
+│   │   │           │               │   │               │   │               │   │   ├── NUM
+│   │   │           │               │   │               │   │               │   │   └── CLBRACKET
+│   │   │           │               │   │               │   │               │   └── size
+│   │   │           │               │   │               │   │               │       ├── OPBRACKET
+│   │   │           │               │   │               │   │               │       ├── ID
+│   │   │           │               │   │               │   │               │       └── CLBRACKET
+│   │   │           │               │   │               │   │               ├── ASSIGN
+│   │   │           │               │   │               │   │               └── zorto
+│   │   │           │               │   │               │   │                   ├── AG
+│   │   │           │               │   │               │   │                   │   └── INVALID NODE
+│   │   │           │               │   │               │   │                   ├── CONCA
+│   │   │           │               │   │               │   │                   └── array
+│   │   │           │               │   │               │   │                       ├── size
+│   │   │           │               │   │               │   │                       │   ├── OPBRACKET
+│   │   │           │               │   │               │   │                       │   ├── NUM
+│   │   │           │               │   │               │   │                       │   └── CLBRACKET
+│   │   │           │               │   │               │   │                       └── size
+│   │   │           │               │   │               │   │                           ├── OPBRACKET
+│   │   │           │               │   │               │   │                           ├── ID
+│   │   │           │               │   │               │   │                           └── CLBRACKET
+│   │   │           │               │   │               │   ├── NEWL
+│   │   │           │               │   │               │   └── statement
+│   │   │           │               │   │               ├── statement
+│   │   │           │               │   │               ├── CLCURL
+│   │   │           │               │   │               ├── else_statement
+│   │   │           │               │   │               │   ├── ELSE
+│   │   │           │               │   │               │   ├── OPCURL
+│   │   │           │               │   │               │   ├── statement
+│   │   │           │               │   │               │   │   ├── statement_w_endl
+│   │   │           │               │   │               │   │   │   └── statement_w_endl
+│   │   │           │               │   │               │   │   │       └── return
+│   │   │           │               │   │               │   │   │           └── Return
+│   │   │           │               │   │               │   │   │               └── RETURN
+│   │   │           │               │   │               │   │   │                   └── BU
+│   │   │           │               │   │               │   │   ├── NEWL
+│   │   │           │               │   │               │   │   └── statement
+│   │   │           │               │   │               │   ├── statement
+│   │   │           │               │   │               │   └── CLCURL
+│   │   │           │               │   │               └── else_statement
+│   │   │           │               │   └── statement
+│   │   │           │               ├── statement
+│   │   │           │               ├── CLCURL
+│   │   │           │               └── else_statement
+│   │   │           └── statement
+│   │   │               ├── statements_wo_endl
+│   │   │               │   └── statements_wo_endl
+│   │   │               │       └── if_statement
+│   │   │               │           └── if_statement
+│   │   │               │               ├── IF
+│   │   │               │               ├── condition
+│   │   │               │               │   ├── OPPARENT
+│   │   │               │               │   ├── comparisons
+│   │   │               │               │   │   ├── Value
+│   │   │               │               │   │   │   └── ID
+│   │   │               │               │   │   │       └── dir
+│   │   │               │               │   │   ├── value
+│   │   │               │               │   │   ├── Comparison_op
+│   │   │               │               │   │   │   └── EQU
+│   │   │               │               │   │   ├── value
+│   │   │               │               │   │   ├── Value
+│   │   │               │               │   │   │   └── WE
+│   │   │               │               │   │   │       └── INVALID NODE
+│   │   │               │               │   │   ├── value
+│   │   │               │               │   │   ├── optional_logic
+│   │   │               │               │   │   └── optional_logic
+│   │   │               │               │   ├── comparisons
+│   │   │               │               │   └── CLPARENT
+│   │   │               │               ├── OPCURL
+│   │   │               │               ├── statement
+│   │   │               │               │   ├── statements_wo_endl
+│   │   │               │               │   │   └── statements_wo_endl
+│   │   │               │               │   │       └── if_statement
+│   │   │               │               │   │           └── if_statement
+│   │   │               │               │   │               ├── IF
+│   │   │               │               │   │               ├── condition
+│   │   │               │               │   │               │   ├── OPPARENT
+│   │   │               │               │   │               │   ├── comparisons
+│   │   │               │               │   │               │   │   ├── Value
+│   │   │               │               │   │               │   │   │   └── ID
+│   │   │               │               │   │               │   │   │       └── y
+│   │   │               │               │   │               │   │   ├── value
+│   │   │               │               │   │               │   │   ├── Comparison_op
+│   │   │               │               │   │               │   │   │   └── SMALL
+│   │   │               │               │   │               │   │   ├── value
+│   │   │               │               │   │               │   │   ├── Value
+│   │   │               │               │   │               │   │   │   └── NUM
+│   │   │               │               │   │               │   │   │       └── 0
+│   │   │               │               │   │               │   │   ├── value
+│   │   │               │               │   │               │   │   ├── optional_logic
+│   │   │               │               │   │               │   │   └── optional_logic
+│   │   │               │               │   │               │   ├── comparisons
+│   │   │               │               │   │               │   └── CLPARENT
+│   │   │               │               │   │               ├── OPCURL
+│   │   │               │               │   │               ├── statement
+│   │   │               │               │   │               │   ├── statement_w_endl
+│   │   │               │               │   │               │   │   └── statement_w_endl
+│   │   │               │               │   │               │   │       ├── ID
+│   │   │               │               │   │               │   │       │   └── world
+│   │   │               │               │   │               │   │       └── assignmentArray
+│   │   │               │               │   │               │   │           └── AssignmentArray
+│   │   │               │               │   │               │   │               ├── ID
+│   │   │               │               │   │               │   │               │   └── world
+│   │   │               │               │   │               │   │               ├── array
+│   │   │               │               │   │               │   │               │   ├── size
+│   │   │               │               │   │               │   │               │   │   ├── OPBRACKET
+│   │   │               │               │   │               │   │               │   │   ├── ID
+│   │   │               │               │   │               │   │               │   │   └── CLBRACKET
+│   │   │               │               │   │               │   │               │   └── size
+│   │   │               │               │   │               │   │               │       ├── OPBRACKET
+│   │   │               │               │   │               │   │               │       ├── ID
+│   │   │               │               │   │               │   │               │       └── CLBRACKET
+│   │   │               │               │   │               │   │               ├── ASSIGN
+│   │   │               │               │   │               │   │               └── zorto
+│   │   │               │               │   │               │   │                   ├── AG
+│   │   │               │               │   │               │   │                   │   └── INVALID NODE
+│   │   │               │               │   │               │   │                   ├── CONCA
+│   │   │               │               │   │               │   │                   └── array
+│   │   │               │               │   │               │   │                       ├── size
+│   │   │               │               │   │               │   │                       │   ├── OPBRACKET
+│   │   │               │               │   │               │   │                       │   ├── ID
+│   │   │               │               │   │               │   │                       │   └── CLBRACKET
+│   │   │               │               │   │               │   │                       └── size
+│   │   │               │               │   │               │   │                           ├── OPBRACKET
+│   │   │               │               │   │               │   │                           ├── NUM
+│   │   │               │               │   │               │   │                           └── CLBRACKET
+│   │   │               │               │   │               │   ├── NEWL
+│   │   │               │               │   │               │   └── statement
+│   │   │               │               │   │               ├── statement
+│   │   │               │               │   │               ├── CLCURL
+│   │   │               │               │   │               ├── else_statement
+│   │   │               │               │   │               │   ├── ELSE
+│   │   │               │               │   │               │   ├── OPCURL
+│   │   │               │               │   │               │   ├── statement
+│   │   │               │               │   │               │   │   ├── statement_w_endl
+│   │   │               │               │   │               │   │   │   └── statement_w_endl
+│   │   │               │               │   │               │   │   │       └── return
+│   │   │               │               │   │               │   │   │           └── Return
+│   │   │               │               │   │               │   │   │               └── RETURN
+│   │   │               │               │   │               │   │   │                   └── BU
+│   │   │               │               │   │               │   │   ├── NEWL
+│   │   │               │               │   │               │   │   └── statement
+│   │   │               │               │   │               │   ├── statement
+│   │   │               │               │   │               │   └── CLCURL
+│   │   │               │               │   │               └── else_statement
+│   │   │               │               │   └── statement
+│   │   │               │               ├── statement
+│   │   │               │               ├── CLCURL
+│   │   │               │               └── else_statement
+│   │   │               └── statement
+│   │   │                   ├── statements_wo_endl
+│   │   │                   │   └── statements_wo_endl
+│   │   │                   │       └── if_statement
+│   │   │                   │           └── if_statement
+│   │   │                   │               ├── IF
+│   │   │                   │               ├── condition
+│   │   │                   │               │   ├── OPPARENT
+│   │   │                   │               │   ├── comparisons
+│   │   │                   │               │   │   ├── Value
+│   │   │                   │               │   │   │   └── ID
+│   │   │                   │               │   │   │       └── dir
+│   │   │                   │               │   │   ├── value
+│   │   │                   │               │   │   ├── Comparison_op
+│   │   │                   │               │   │   │   └── EQU
+│   │   │                   │               │   │   ├── value
+│   │   │                   │               │   │   ├── Value
+│   │   │                   │               │   │   │   └── EA
+│   │   │                   │               │   │   │       └── INVALID NODE
+│   │   │                   │               │   │   ├── value
+│   │   │                   │               │   │   ├── optional_logic
+│   │   │                   │               │   │   └── optional_logic
+│   │   │                   │               │   ├── comparisons
+│   │   │                   │               │   └── CLPARENT
+│   │   │                   │               ├── OPCURL
+│   │   │                   │               ├── statement
+│   │   │                   │               │   ├── statements_wo_endl
+│   │   │                   │               │   │   └── statements_wo_endl
+│   │   │                   │               │   │       └── if_statement
+│   │   │                   │               │   │           └── if_statement
+│   │   │                   │               │   │               ├── IF
+│   │   │                   │               │   │               ├── condition
+│   │   │                   │               │   │               │   ├── OPPARENT
+│   │   │                   │               │   │               │   ├── comparisons
+│   │   │                   │               │   │               │   │   ├── Value
+│   │   │                   │               │   │               │   │   │   └── ID
+│   │   │                   │               │   │               │   │   │       └── y
+│   │   │                   │               │   │               │   │   ├── value
+│   │   │                   │               │   │               │   │   ├── Comparison_op
+│   │   │                   │               │   │               │   │   │   └── SMALL
+│   │   │                   │               │   │               │   │   ├── value
+│   │   │                   │               │   │               │   │   ├── Value
+│   │   │                   │               │   │               │   │   │   └── ID
+│   │   │                   │               │   │               │   │   │       └── width
+│   │   │                   │               │   │               │   │   ├── value
+│   │   │                   │               │   │               │   │   ├── optional_logic
+│   │   │                   │               │   │               │   │   └── optional_logic
+│   │   │                   │               │   │               │   ├── comparisons
+│   │   │                   │               │   │               │   └── CLPARENT
+│   │   │                   │               │   │               ├── OPCURL
+│   │   │                   │               │   │               ├── statement
+│   │   │                   │               │   │               │   ├── statement_w_endl
+│   │   │                   │               │   │               │   │   └── statement_w_endl
+│   │   │                   │               │   │               │   │       ├── ID
+│   │   │                   │               │   │               │   │       │   └── world
+│   │   │                   │               │   │               │   │       └── assignmentArray
+│   │   │                   │               │   │               │   │           └── AssignmentArray
+│   │   │                   │               │   │               │   │               ├── ID
+│   │   │                   │               │   │               │   │               │   └── world
+│   │   │                   │               │   │               │   │               ├── array
+│   │   │                   │               │   │               │   │               │   ├── size
+│   │   │                   │               │   │               │   │               │   │   ├── OPBRACKET
+│   │   │                   │               │   │               │   │               │   │   ├── ID
+│   │   │                   │               │   │               │   │               │   │   └── CLBRACKET
+│   │   │                   │               │   │               │   │               │   └── size
+│   │   │                   │               │   │               │   │               │       ├── OPBRACKET
+│   │   │                   │               │   │               │   │               │       ├── NUM
+│   │   │                   │               │   │               │   │               │       └── CLBRACKET
+│   │   │                   │               │   │               │   │               ├── ASSIGN
+│   │   │                   │               │   │               │   │               └── zorto
+│   │   │                   │               │   │               │   │                   ├── AG
+│   │   │                   │               │   │               │   │                   │   └── INVALID NODE
+│   │   │                   │               │   │               │   │                   ├── CONCA
+│   │   │                   │               │   │               │   │                   └── array
+│   │   │                   │               │   │               │   │                       ├── size
+│   │   │                   │               │   │               │   │                       │   ├── OPBRACKET
+│   │   │                   │               │   │               │   │                       │   ├── ID
+│   │   │                   │               │   │               │   │                       │   └── CLBRACKET
+│   │   │                   │               │   │               │   │                       └── size
+│   │   │                   │               │   │               │   │                           ├── OPBRACKET
+│   │   │                   │               │   │               │   │                           ├── NUM
+│   │   │                   │               │   │               │   │                           └── CLBRACKET
+│   │   │                   │               │   │               │   ├── NEWL
+│   │   │                   │               │   │               │   └── statement
+│   │   │                   │               │   │               ├── statement
+│   │   │                   │               │   │               ├── CLCURL
+│   │   │                   │               │   │               ├── else_statement
+│   │   │                   │               │   │               │   ├── ELSE
+│   │   │                   │               │   │               │   ├── OPCURL
+│   │   │                   │               │   │               │   ├── statement
+│   │   │                   │               │   │               │   │   ├── statement_w_endl
+│   │   │                   │               │   │               │   │   │   └── statement_w_endl
+│   │   │                   │               │   │               │   │   │       └── return
+│   │   │                   │               │   │               │   │   │           └── Return
+│   │   │                   │               │   │               │   │   │               └── RETURN
+│   │   │                   │               │   │               │   │   │                   └── BU
+│   │   │                   │               │   │               │   │   ├── NEWL
+│   │   │                   │               │   │               │   │   └── statement
+│   │   │                   │               │   │               │   ├── statement
+│   │   │                   │               │   │               │   └── CLCURL
+│   │   │                   │               │   │               └── else_statement
+│   │   │                   │               │   └── statement
+│   │   │                   │               ├── statement
+│   │   │                   │               ├── CLCURL
+│   │   │                   │               └── else_statement
+│   │   │                   └── statement
+│   │   ├── CLCURL
+│   │   └── functions
+│   │       ├── functionRE
+│   │       │   ├── DEFINE
+│   │       │   ├── ID
+│   │       │   │   └── initialize
+│   │       │   ├── parse_functionCall
+│   │       │   │   ├── OPPARENT
+│   │       │   │   ├── parse_argument_list
+│   │       │   │   └── parse_argument_list
+│   │       │   │       ├── parse_expression
+│   │       │   │       │   └── ID
+│   │       │   │       │       └── x
+│   │       │   │       └── variable
+│   │       │   │           ├── COMMA
+│   │       │   │           └── parse_expression
+│   │       │   │               └── ID
+│   │       │   │                   └── y
+│   │       │   ├── OPCURL
+│   │       │   ├── statement
+│   │       │   │   └── statement
+│   │       │   │       ├── statements_wo_endl
+│   │       │   │       │   └── statements_wo_endl
+│   │       │   │       │       └── if_statement
+│   │       │   │       │           └── if_statement
+│   │       │   │       │               ├── IF
+│   │       │   │       │               ├── condition
+│   │       │   │       │               │   ├── OPPARENT
+│   │       │   │       │               │   ├── comparisons
+│   │       │   │       │               │   │   ├── Value
+│   │       │   │       │               │   │   │   └── ID
+│   │       │   │       │               │   │   │       └── x
+│   │       │   │       │               │   │   ├── value
+│   │       │   │       │               │   │   ├── Comparison_op
+│   │       │   │       │               │   │   │   └── NOTEQUI
+│   │       │   │       │               │   │   ├── value
+│   │       │   │       │               │   │   ├── Value
+│   │       │   │       │               │   │   │   └── ID
+│   │       │   │       │               │   │   │       └── y
+│   │       │   │       │               │   │   ├── value
+│   │       │   │       │               │   │   ├── optional_logic
+│   │       │   │       │               │   │   └── optional_logic
+│   │       │   │       │               │   ├── comparisons
+│   │       │   │       │               │   └── CLPARENT
+│   │       │   │       │               ├── OPCURL
+│   │       │   │       │               ├── statement
+│   │       │   │       │               │   ├── statement_w_endl
+│   │       │   │       │               │   │   └── statement_w_endl
+│   │       │   │       │               │   │       └── return
+│   │       │   │       │               │   │           └── Return
+│   │       │   │       │               │   │               └── RETURN
+│   │       │   │       │               │   │                   └── FALSE
+│   │       │   │       │               │   ├── NEWL
+│   │       │   │       │               │   └── statement
+│   │       │   │       │               ├── statement
+│   │       │   │       │               ├── CLCURL
+│   │       │   │       │               ├── else_statement
+│   │       │   │       │               │   ├── ELSE
+│   │       │   │       │               │   ├── OPCURL
+│   │       │   │       │               │   ├── statement
+│   │       │   │       │               │   │   ├── statement_w_endl
+│   │       │   │       │               │   │   │   └── statement_w_endl
+│   │       │   │       │               │   │   │       ├── ID
+│   │       │   │       │               │   │   │       │   └── world
+│   │       │   │       │               │   │   │       └── assignmentArray
+│   │       │   │       │               │   │   │           └── AssignmentArray
+│   │       │   │       │               │   │   │               ├── ID
+│   │       │   │       │               │   │   │               │   └── world
+│   │       │   │       │               │   │   │               └── array
+│   │       │   │       │               │   │   │                   ├── size
+│   │       │   │       │               │   │   │                   │   ├── OPBRACKET
+│   │       │   │       │               │   │   │                   │   ├── ID
+│   │       │   │       │               │   │   │                   │   └── CLBRACKET
+│   │       │   │       │               │   │   │                   └── size
+│   │       │   │       │               │   │   │                       ├── OPBRACKET
+│   │       │   │       │               │   │   │                       ├── ID
+│   │       │   │       │               │   │   │                       └── CLBRACKET
+│   │       │   │       │               │   │   ├── NEWL
+│   │       │   │       │               │   │   └── statement
+│   │       │   │       │               │   │       ├── statement_w_endl
+│   │       │   │       │               │   │       │   └── statement_w_endl
+│   │       │   │       │               │   │       │       ├── ID
+│   │       │   │       │               │   │       │       │   └── world
+│   │       │   │       │               │   │       │       └── assignmentArray
+│   │       │   │       │               │   │       │           └── AssignmentArray
+│   │       │   │       │               │   │       │               ├── ID
+│   │       │   │       │               │   │       │               │   └── world
+│   │       │   │       │               │   │       │               ├── array
+│   │       │   │       │               │   │       │               │   ├── size
+│   │       │   │       │               │   │       │               │   │   ├── OPBRACKET
+│   │       │   │       │               │   │       │               │   │   ├── NUM
+│   │       │   │       │               │   │       │               │   │   └── CLBRACKET
+│   │       │   │       │               │   │       │               │   └── size
+│   │       │   │       │               │   │       │               │       ├── OPBRACKET
+│   │       │   │       │               │   │       │               │       ├── NUM
+│   │       │   │       │               │   │       │               │       └── CLBRACKET
+│   │       │   │       │               │   │       │               ├── ASSIGN
+│   │       │   │       │               │   │       │               └── zorto
+│   │       │   │       │               │   │       ├── NEWL
+│   │       │   │       │               │   │       └── statement
+│   │       │   │       │               │   │           ├── statement_w_endl
+│   │       │   │       │               │   │           │   └── statement_w_endl
+│   │       │   │       │               │   │           │       ├── ID
+│   │       │   │       │               │   │           │       │   └── world
+│   │       │   │       │               │   │           │       └── assignmentArray
+│   │       │   │       │               │   │           │           └── AssignmentArray
+│   │       │   │       │               │   │           │               ├── ID
+│   │       │   │       │               │   │           │               │   └── world
+│   │       │   │       │               │   │           │               ├── array
+│   │       │   │       │               │   │           │               │   ├── size
+│   │       │   │       │               │   │           │               │   │   ├── OPBRACKET
+│   │       │   │       │               │   │           │               │   │   ├── NUM
+│   │       │   │       │               │   │           │               │   │   └── CLBRACKET
+│   │       │   │       │               │   │           │               │   └── size
+│   │       │   │       │               │   │           │               │       ├── OPBRACKET
+│   │       │   │       │               │   │           │               │       ├── NUM
+│   │       │   │       │               │   │           │               │       └── CLBRACKET
+│   │       │   │       │               │   │           │               ├── ASSIGN
+│   │       │   │       │               │   │           │               └── zorto
+│   │       │   │       │               │   │           ├── NEWL
+│   │       │   │       │               │   │           └── statement
+│   │       │   │       │               │   │               ├── statement_w_endl
+│   │       │   │       │               │   │               │   └── statement_w_endl
+│   │       │   │       │               │   │               │       ├── ID
+│   │       │   │       │               │   │               │       │   └── world
+│   │       │   │       │               │   │               │       └── assignmentArray
+│   │       │   │       │               │   │               │           └── AssignmentArray
+│   │       │   │       │               │   │               │               ├── ID
+│   │       │   │       │               │   │               │               │   └── world
+│   │       │   │       │               │   │               │               ├── array
+│   │       │   │       │               │   │               │               │   ├── size
+│   │       │   │       │               │   │               │               │   │   ├── OPBRACKET
+│   │       │   │       │               │   │               │               │   │   ├── NUM
+│   │       │   │       │               │   │               │               │   │   └── CLBRACKET
+│   │       │   │       │               │   │               │               │   └── size
+│   │       │   │       │               │   │               │               │       ├── OPBRACKET
+│   │       │   │       │               │   │               │               │       ├── NUM
+│   │       │   │       │               │   │               │               │       └── CLBRACKET
+│   │       │   │       │               │   │               │               ├── ASSIGN
+│   │       │   │       │               │   │               │               └── zorto
+│   │       │   │       │               │   │               ├── NEWL
+│   │       │   │       │               │   │               └── statement
+│   │       │   │       │               │   │                   ├── statement_w_endl
+│   │       │   │       │               │   │                   │   └── statement_w_endl
+│   │       │   │       │               │   │                   │       ├── ID
+│   │       │   │       │               │   │                   │       │   └── world
+│   │       │   │       │               │   │                   │       └── assignmentArray
+│   │       │   │       │               │   │                   │           └── AssignmentArray
+│   │       │   │       │               │   │                   │               ├── ID
+│   │       │   │       │               │   │                   │               │   └── world
+│   │       │   │       │               │   │                   │               ├── array
+│   │       │   │       │               │   │                   │               │   ├── size
+│   │       │   │       │               │   │                   │               │   │   ├── OPBRACKET
+│   │       │   │       │               │   │                   │               │   │   ├── NUM
+│   │       │   │       │               │   │                   │               │   │   └── CLBRACKET
+│   │       │   │       │               │   │                   │               │   └── size
+│   │       │   │       │               │   │                   │               │       ├── OPBRACKET
+│   │       │   │       │               │   │                   │               │       ├── NUM
+│   │       │   │       │               │   │                   │               │       └── CLBRACKET
+│   │       │   │       │               │   │                   │               ├── ASSIGN
+│   │       │   │       │               │   │                   │               └── zorto
+│   │       │   │       │               │   │                   ├── NEWL
+│   │       │   │       │               │   │                   └── statement
+│   │       │   │       │               │   │                       ├── statement_w_endl
+│   │       │   │       │               │   │                       │   └── statement_w_endl
+│   │       │   │       │               │   │                       │       ├── ID
+│   │       │   │       │               │   │                       │       │   └── world
+│   │       │   │       │               │   │                       │       └── assignmentArray
+│   │       │   │       │               │   │                       │           └── AssignmentArray
+│   │       │   │       │               │   │                       │               ├── ID
+│   │       │   │       │               │   │                       │               │   └── world
+│   │       │   │       │               │   │                       │               ├── array
+│   │       │   │       │               │   │                       │               │   ├── size
+│   │       │   │       │               │   │                       │               │   │   ├── OPBRACKET
+│   │       │   │       │               │   │                       │               │   │   ├── NUM
+│   │       │   │       │               │   │                       │               │   │   └── CLBRACKET
+│   │       │   │       │               │   │                       │               │   └── size
+│   │       │   │       │               │   │                       │               │       ├── OPBRACKET
+│   │       │   │       │               │   │                       │               │       ├── NUM
+│   │       │   │       │               │   │                       │               │       └── CLBRACKET
+│   │       │   │       │               │   │                       │               ├── ASSIGN
+│   │       │   │       │               │   │                       │               └── zorto
+│   │       │   │       │               │   │                       ├── NEWL
+│   │       │   │       │               │   │                       └── statement
+│   │       │   │       │               │   │                           ├── statement_w_endl
+│   │       │   │       │               │   │                           │   └── statement_w_endl
+│   │       │   │       │               │   │                           │       ├── ID
+│   │       │   │       │               │   │                           │       │   └── world
+│   │       │   │       │               │   │                           │       └── assignmentArray
+│   │       │   │       │               │   │                           │           └── AssignmentArray
+│   │       │   │       │               │   │                           │               ├── ID
+│   │       │   │       │               │   │                           │               │   └── world
+│   │       │   │       │               │   │                           │               ├── array
+│   │       │   │       │               │   │                           │               │   ├── size
+│   │       │   │       │               │   │                           │               │   │   ├── OPBRACKET
+│   │       │   │       │               │   │                           │               │   │   ├── NUM
+│   │       │   │       │               │   │                           │               │   │   └── CLBRACKET
+│   │       │   │       │               │   │                           │               │   └── size
+│   │       │   │       │               │   │                           │               │       ├── OPBRACKET
+│   │       │   │       │               │   │                           │               │       ├── NUM
+│   │       │   │       │               │   │                           │               │       └── CLBRACKET
+│   │       │   │       │               │   │                           │               ├── ASSIGN
+│   │       │   │       │               │   │                           │               └── zorto
+│   │       │   │       │               │   │                           ├── NEWL
+│   │       │   │       │               │   │                           └── statement
+│   │       │   │       │               │   │                               ├── statement_w_endl
+│   │       │   │       │               │   │                               │   └── statement_w_endl
+│   │       │   │       │               │   │                               │       ├── ID
+│   │       │   │       │               │   │                               │       │   └── world
+│   │       │   │       │               │   │                               │       └── assignmentArray
+│   │       │   │       │               │   │                               │           └── AssignmentArray
+│   │       │   │       │               │   │                               │               ├── ID
+│   │       │   │       │               │   │                               │               │   └── world
+│   │       │   │       │               │   │                               │               ├── array
+│   │       │   │       │               │   │                               │               │   ├── size
+│   │       │   │       │               │   │                               │               │   │   ├── OPBRACKET
+│   │       │   │       │               │   │                               │               │   │   ├── NUM
+│   │       │   │       │               │   │                               │               │   │   └── CLBRACKET
+│   │       │   │       │               │   │                               │               │   └── size
+│   │       │   │       │               │   │                               │               │       ├── OPBRACKET
+│   │       │   │       │               │   │                               │               │       ├── NUM
+│   │       │   │       │               │   │                               │               │       └── CLBRACKET
+│   │       │   │       │               │   │                               │               ├── ASSIGN
+│   │       │   │       │               │   │                               │               └── zorto
+│   │       │   │       │               │   │                               ├── NEWL
+│   │       │   │       │               │   │                               └── statement
+│   │       │   │       │               │   │                                   ├── statement_w_endl
+│   │       │   │       │               │   │                                   │   └── statement_w_endl
+│   │       │   │       │               │   │                                   │       ├── ID
+│   │       │   │       │               │   │                                   │       │   └── world
+│   │       │   │       │               │   │                                   │       └── assignmentArray
+│   │       │   │       │               │   │                                   │           └── AssignmentArray
+│   │       │   │       │               │   │                                   │               ├── ID
+│   │       │   │       │               │   │                                   │               │   └── world
+│   │       │   │       │               │   │                                   │               ├── array
+│   │       │   │       │               │   │                                   │               │   ├── size
+│   │       │   │       │               │   │                                   │               │   │   ├── OPBRACKET
+│   │       │   │       │               │   │                                   │               │   │   ├── NUM
+│   │       │   │       │               │   │                                   │               │   │   └── CLBRACKET
+│   │       │   │       │               │   │                                   │               │   └── size
+│   │       │   │       │               │   │                                   │               │       ├── OPBRACKET
+│   │       │   │       │               │   │                                   │               │       ├── NUM
+│   │       │   │       │               │   │                                   │               │       └── CLBRACKET
+│   │       │   │       │               │   │                                   │               ├── ASSIGN
+│   │       │   │       │               │   │                                   │               └── zorto
+│   │       │   │       │               │   │                                   ├── NEWL
+│   │       │   │       │               │   │                                   └── statement
+│   │       │   │       │               │   │                                       ├── statement_w_endl
+│   │       │   │       │               │   │                                       │   └── statement_w_endl
+│   │       │   │       │               │   │                                       │       ├── ID
+│   │       │   │       │               │   │                                       │       │   └── world
+│   │       │   │       │               │   │                                       │       └── assignmentArray
+│   │       │   │       │               │   │                                       │           └── AssignmentArray
+│   │       │   │       │               │   │                                       │               ├── ID
+│   │       │   │       │               │   │                                       │               │   └── world
+│   │       │   │       │               │   │                                       │               ├── array
+│   │       │   │       │               │   │                                       │               │   ├── size
+│   │       │   │       │               │   │                                       │               │   │   ├── OPBRACKET
+│   │       │   │       │               │   │                                       │               │   │   ├── NUM
+│   │       │   │       │               │   │                                       │               │   │   └── CLBRACKET
+│   │       │   │       │               │   │                                       │               │   └── size
+│   │       │   │       │               │   │                                       │               │       ├── OPBRACKET
+│   │       │   │       │               │   │                                       │               │       ├── NUM
+│   │       │   │       │               │   │                                       │               │       └── CLBRACKET
+│   │       │   │       │               │   │                                       │               ├── ASSIGN
+│   │       │   │       │               │   │                                       │               └── zorto
+│   │       │   │       │               │   │                                       ├── NEWL
+│   │       │   │       │               │   │                                       └── statement
+│   │       │   │       │               │   │                                           ├── statement_w_endl
+│   │       │   │       │               │   │                                           │   └── statement_w_endl
+│   │       │   │       │               │   │                                           │       └── return
+│   │       │   │       │               │   │                                           │           └── Return
+│   │       │   │       │               │   │                                           │               └── RETURN
+│   │       │   │       │               │   │                                           │                   └── TRUE
+│   │       │   │       │               │   │                                           ├── NEWL
+│   │       │   │       │               │   │                                           └── statement
+│   │       │   │       │               │   ├── statement
+│   │       │   │       │               │   └── CLCURL
+│   │       │   │       │               └── else_statement
+│   │       │   │       └── statement
+│   │       │   ├── CLCURL
+│   │       │   └── functions
+│   │       └── additional_functions
+│   └── additional_functions
+└── Main_Body
+    ├── BEGIN
+    │   └── NEWL
+    ├── statement
+    │   ├── statement_w_endl
+    │   │   └── statement_w_endl
+    │   │       ├── ID
+    │   │       │   └── i
+    │   │       └── arith_op
+    │   │           └── arith_op
+    │   │               ├── ASSIGN
+    │   │               └── arith_expr
+    │   │                   ├── term
+    │   │                   │   └── NUM
+    │   │                   │       └── 0
+    │   │                   └── arith_expr_tail
+    │   │                       └── add_op
+    │   ├── NEWL
+    │   └── statement
+    │       ├── statement_w_endl
+    │       │   └── statement_w_endl
+    │       │       ├── ID
+    │       │       │   └── a
+    │       │       └── arith_op
+    │       │           └── arith_op
+    │       │               ├── ASSIGN
+    │       │               └── arith_expr
+    │       │                   ├── term
+    │       │                   │   └── NUM
+    │       │                   │       └── 0
+    │       │                   └── arith_expr_tail
+    │       │                       └── add_op
+    │       ├── NEWL
+    │       └── statement
+    │           ├── statement_w_endl
+    │           │   └── statement_w_endl
+    │           │       ├── ID
+    │           │       │   └── total
+    │           │       └── arith_op
+    │           │           └── arith_op
+    │           │               ├── ASSIGN
+    │           │               └── arith_expr
+    │           │                   ├── term
+    │           │                   │   └── NUM
+    │           │                   │       └── 4
+    │           │                   └── arith_expr_tail
+    │           │                       └── add_op
+    │           ├── NEWL
+    │           └── statement
+    │               ├── statement_w_endl
+    │               │   └── statement_w_endl
+    │               │       ├── ID
+    │               │       │   └── initialize
+    │               │       └── function_call
+    │               │           └── Function_call
+    │               │               └── parse_argument_list
+    │               │                   ├── parse_expression
+    │               │                   │   └── NUM
+    │               │                   │       └── 4
+    │               │                   └── variable
+    │               │                       ├── COMMA
+    │               │                       └── parse_expression
+    │               │                           └── NUM
+    │               │                               └── 4
+    │               ├── NEWL
+    │               └── statement
+    │                   ├── statement_w_endl
+    │                   │   └── statement_w_endl
+    │                   │       ├── ID
+    │                   │       │   └── total
+    │                   │       └── arith_op
+    │                   │           └── arith_op
+    │                   │               ├── ASSIGN
+    │                   │               └── arith_expr
+    │                   │                   ├── term
+    │                   │                   │   └── ID
+    │                   │                   │       └── total
+    │                   │                   └── arith_expr_tail
+    │                   │                       ├── add_op
+    │                   │                       │   └── DIV
+    │                   │                       ├── term
+    │                   │                       │   └── NUM
+    │                   │                       │       └── 4
+    │                   │                       └── arith_expr_tail
+    │                   │                           └── add_op
+    │                   ├── NEWL
+    │                   └── statement
+    │                       ├── statement_w_endl
+    │                       │   └── statement_w_endl
+    │                       │       ├── ID
+    │                       │       │   └── total
+    │                       │       └── arith_op
+    │                       │           └── arith_op
+    │                       │               ├── ASSIGN
+    │                       │               └── arith_expr
+    │                       │                   ├── term
+    │                       │                   │   └── ID
+    │                       │                   │       └── total
+    │                       │                   └── arith_expr_tail
+    │                       │                       ├── add_op
+    │                       │                       │   └── SUB
+    │                       │                       ├── term
+    │                       │                       │   └── NUM
+    │                       │                       │       └── 1
+    │                       │                       └── arith_expr_tail
+    │                       │                           └── add_op
+    │                       ├── NEWL
+    │                       └── statement
+    │                           ├── statement_w_endl
+    │                           │   └── statement_w_endl
+    │                           │       ├── ID
+    │                           │       │   └── total
+    │                           │       └── arith_op
+    │                           │           └── arith_op
+    │                           │               ├── ASSIGN
+    │                           │               └── arith_expr
+    │                           │                   ├── term
+    │                           │                   │   └── ID
+    │                           │                   │       └── total
+    │                           │                   └── arith_expr_tail
+    │                           │                       ├── add_op
+    │                           │                       │   └── ADD
+    │                           │                       ├── term
+    │                           │                       │   └── NUM
+    │                           │                       │       └── 1
+    │                           │                       └── arith_expr_tail
+    │                           │                           └── add_op
+    │                           ├── NEWL
+    │                           └── statement
+    │                               ├── statement_w_endl
+    │                               │   └── statement_w_endl
+    │                               │       ├── ID
+    │                               │       │   └── total
+    │                               │       └── arith_op
+    │                               │           └── arith_op
+    │                               │               ├── ASSIGN
+    │                               │               └── arith_expr
+    │                               │                   ├── term
+    │                               │                   │   └── ID
+    │                               │                   │       └── total
+    │                               │                   └── arith_expr_tail
+    │                               │                       ├── add_op
+    │                               │                       │   └── MUL
+    │                               │                       ├── term
+    │                               │                       │   └── NUM
+    │                               │                       │       └── 1
+    │                               │                       └── arith_expr_tail
+    │                               │                           └── add_op
+    │                               ├── NEWL
+    │                               └── statement
+    │                                   ├── statement_w_endl
+    │                                   │   └── statement_w_endl
+    │                                   │       ├── ID
+    │                                   │       │   └── total
+    │                                   │       └── arith_op
+    │                                   │           └── arith_op
+    │                                   │               ├── ASSIGN
+    │                                   │               └── arith_expr
+    │                                   │                   ├── term
+    │                                   │                   │   └── ID
+    │                                   │                   │       └── total
+    │                                   │                   └── arith_expr_tail
+    │                                   │                       ├── add_op
+    │                                   │                       │   └── MUL
+    │                                   │                       ├── term
+    │                                   │                       │   └── ID
+    │                                   │                       │       └── total
+    │                                   │                       └── arith_expr_tail
+    │                                   │                           ├── add_op
+    │                                   │                           │   └── MUL
+    │                                   │                           ├── term
+    │                                   │                           │   └── ID
+    │                                   │                           │       └── total
+    │                                   │                           └── arith_expr_tail
+    │                                   │                               └── add_op
+    │                                   ├── NEWL
+    │                                   └── statement
+    │                                       ├── statements_wo_endl
+    │                                       │   └── statements_wo_endl
+    │                                       │       └── loop
+    │                                       │           └── loop
+    │                                       │               └── LOOP
+    │                                       │                   ├── condition
+    │                                       │                   ├── condition
+    │                                       │                   │   ├── OPPARENT
+    │                                       │                   │   ├── comparisons
+    │                                       │                   │   │   ├── Value
+    │                                       │                   │   │   │   └── ID
+    │                                       │                   │   │   │       └── i
+    │                                       │                   │   │   ├── value
+    │                                       │                   │   │   ├── Comparison_op
+    │                                       │                   │   │   │   └── SMALL
+    │                                       │                   │   │   ├── value
+    │                                       │                   │   │   ├── Value
+    │                                       │                   │   │   │   └── NUM
+    │                                       │                   │   │   │       └── 1
+    │                                       │                   │   │   ├── value
+    │                                       │                   │   │   ├── optional_logic
+    │                                       │                   │   │   │   ├── OR
+    │                                       │                   │   │   │   ├── comparisons
+    │                                       │                   │   │   │   │   ├── Value
+    │                                       │                   │   │   │   │   │   └── ID
+    │                                       │                   │   │   │   │   │       └── i
+    │                                       │                   │   │   │   │   ├── value
+    │                                       │                   │   │   │   │   ├── Comparison_op
+    │                                       │                   │   │   │   │   │   └── SMALLQUI
+    │                                       │                   │   │   │   │   ├── value
+    │                                       │                   │   │   │   │   ├── Value
+    │                                       │                   │   │   │   │   │   └── NUM
+    │                                       │                   │   │   │   │   │       └── 1
+    │                                       │                   │   │   │   │   ├── value
+    │                                       │                   │   │   │   │   ├── optional_logic
+    │                                       │                   │   │   │   │   └── optional_logic
+    │                                       │                   │   │   │   ├── comparisons
+    │                                       │                   │   │   │   ├── optional_logic
+    │                                       │                   │   │   │   └── optional_logic
+    │                                       │                   │   │   └── optional_logic
+    │                                       │                   │   ├── comparisons
+    │                                       │                   │   └── CLPARENT
+    │                                       │                   ├── OPCURL
+    │                                       │                   ├── statement
+    │                                       │                   ├── statement
+    │                                       │                   │   ├── statement_w_endl
+    │                                       │                   │   │   └── statement_w_endl
+    │                                       │                   │   │       ├── ID
+    │                                       │                   │   │       │   └── move
+    │                                       │                   │   │       └── function_call
+    │                                       │                   │   │           └── Function_call
+    │                                       │                   │   │               └── parse_argument_list
+    │                                       │                   │   │                   ├── parse_expression
+    │                                       │                   │   │                   │   └── EA
+    │                                       │                   │   │                   │       └── INVALID NODE
+    │                                       │                   │   │                   └── variable
+    │                                       │                   │   │                       ├── COMMA
+    │                                       │                   │   │                       ├── parse_expression
+    │                                       │                   │   │                       │   └── NUM
+    │                                       │                   │   │                       │       └── 0
+    │                                       │                   │   │                       ├── COMMA
+    │                                       │                   │   │                       ├── parse_expression
+    │                                       │                   │   │                       │   └── NUM
+    │                                       │                   │   │                       │       └── 0
+    │                                       │                   │   │                       ├── COMMA
+    │                                       │                   │   │                       └── parse_expression
+    │                                       │                   │   │                           └── ID
+    │                                       │                   │   │                               └── world
+    │                                       │                   │   ├── NEWL
+    │                                       │                   │   └── statement
+    │                                       │                   │       ├── statement_w_endl
+    │                                       │                   │       │   └── statement_w_endl
+    │                                       │                   │       │       ├── ID
+    │                                       │                   │       │       │   └── move
+    │                                       │                   │       │       └── function_call
+    │                                       │                   │       │           └── Function_call
+    │                                       │                   │       │               └── parse_argument_list
+    │                                       │                   │       │                   ├── parse_expression
+    │                                       │                   │       │                   │   └── NO
+    │                                       │                   │       │                   │       └── INVALID NODE
+    │                                       │                   │       │                   └── variable
+    │                                       │                   │       │                       ├── COMMA
+    │                                       │                   │       │                       ├── parse_expression
+    │                                       │                   │       │                       │   └── NUM
+    │                                       │                   │       │                       │       └── 0
+    │                                       │                   │       │                       ├── COMMA
+    │                                       │                   │       │                       ├── parse_expression
+    │                                       │                   │       │                       │   └── NUM
+    │                                       │                   │       │                       │       └── 1
+    │                                       │                   │       │                       ├── COMMA
+    │                                       │                   │       │                       └── parse_expression
+    │                                       │                   │       │                           └── ID
+    │                                       │                   │       │                               └── world
+    │                                       │                   │       ├── NEWL
+    │                                       │                   │       └── statement
+    │                                       │                   │           ├── statement_w_endl
+    │                                       │                   │           │   └── statement_w_endl
+    │                                       │                   │           │       ├── ID
+    │                                       │                   │           │       │   └── agmove
+    │                                       │                   │           │       └── function_call
+    │                                       │                   │           │           └── Function_call
+    │                                       │                   │           │               └── parse_argument_list
+    │                                       │                   │           │                   ├── parse_expression
+    │                                       │                   │           │                   │   └── WE
+    │                                       │                   │           │                   │       └── INVALID NODE
+    │                                       │                   │           │                   └── variable
+    │                                       │                   │           │                       ├── COMMA
+    │                                       │                   │           │                       ├── parse_expression
+    │                                       │                   │           │                       │   └── NUM
+    │                                       │                   │           │                       │       └── 1
+    │                                       │                   │           │                       ├── COMMA
+    │                                       │                   │           │                       ├── parse_expression
+    │                                       │                   │           │                       │   └── NUM
+    │                                       │                   │           │                       │       └── 1
+    │                                       │                   │           │                       ├── COMMA
+    │                                       │                   │           │                       └── parse_expression
+    │                                       │                   │           │                           └── ID
+    │                                       │                   │           │                               └── world
+    │                                       │                   │           ├── NEWL
+    │                                       │                   │           └── statement
+    │                                       │                   │               ├── statement_w_endl
+    │                                       │                   │               │   └── statement_w_endl
+    │                                       │                   │               │       ├── ID
+    │                                       │                   │               │       │   └── move
+    │                                       │                   │               │       └── function_call
+    │                                       │                   │               │           └── Function_call
+    │                                       │                   │               │               └── parse_argument_list
+    │                                       │                   │               │                   ├── parse_expression
+    │                                       │                   │               │                   │   └── SO
+    │                                       │                   │               │                   │       └── INVALID NODE
+    │                                       │                   │               │                   └── variable
+    │                                       │                   │               │                       ├── COMMA
+    │                                       │                   │               │                       ├── parse_expression
+    │                                       │                   │               │                       │   └── NUM
+    │                                       │                   │               │                       │       └── 1
+    │                                       │                   │               │                       ├── COMMA
+    │                                       │                   │               │                       ├── parse_expression
+    │                                       │                   │               │                       │   └── NUM
+    │                                       │                   │               │                       │       └── 0
+    │                                       │                   │               │                       ├── COMMA
+    │                                       │                   │               │                       └── parse_expression
+    │                                       │                   │               │                           └── ID
+    │                                       │                   │               │                               └── world
+    │                                       │                   │               ├── NEWL
+    │                                       │                   │               └── statement
+    │                                       │                   │                   ├── statement_w_endl
+    │                                       │                   │                   │   └── statement_w_endl
+    │                                       │                   │                   │       ├── ID
+    │                                       │                   │                   │       │   └── i
+    │                                       │                   │                   │       └── arith_op
+    │                                       │                   │                   │           └── arith_op
+    │                                       │                   │                   │               ├── ASSIGN
+    │                                       │                   │                   │               └── arith_expr
+    │                                       │                   │                   │                   ├── term
+    │                                       │                   │                   │                   │   └── ID
+    │                                       │                   │                   │                   │       └── i
+    │                                       │                   │                   │                   └── arith_expr_tail
+    │                                       │                   │                   │                       ├── add_op
+    │                                       │                   │                   │                       │   └── ADD
+    │                                       │                   │                   │                       ├── term
+    │                                       │                   │                   │                       │   └── NUM
+    │                                       │                   │                   │                       │       └── 1
+    │                                       │                   │                   │                       └── arith_expr_tail
+    │                                       │                   │                   │                           └── add_op
+    │                                       │                   │                   ├── NEWL
+    │                                       │                   │                   └── statement
+    │                                       │                   └── CLCURL
+    │                                       └── statement
+    │                                           ├── statements_wo_endl
+    │                                           │   └── statements_wo_endl
+    │                                           │       └── if_statement
+    │                                           │           └── if_statement
+    │                                           │               ├── IF
+    │                                           │               ├── condition
+    │                                           │               │   ├── OPPARENT
+    │                                           │               │   ├── comparisons
+    │                                           │               │   │   ├── Value
+    │                                           │               │   │   │   └── ID
+    │                                           │               │   │   │       └── i
+    │                                           │               │   │   ├── value
+    │                                           │               │   │   ├── Comparison_op
+    │                                           │               │   │   │   └── NOTEQUI
+    │                                           │               │   │   ├── value
+    │                                           │               │   │   ├── Value
+    │                                           │               │   │   │   └── ID
+    │                                           │               │   │   │       └── a
+    │                                           │               │   │   ├── value
+    │                                           │               │   │   ├── optional_logic
+    │                                           │               │   │   │   ├── NOT
+    │                                           │               │   │   │   ├── comparisons
+    │                                           │               │   │   │   │   ├── Value
+    │                                           │               │   │   │   │   │   └── ID
+    │                                           │               │   │   │   │   │       └── a
+    │                                           │               │   │   │   │   ├── value
+    │                                           │               │   │   │   │   ├── Comparison_op
+    │                                           │               │   │   │   │   │   └── SMALL
+    │                                           │               │   │   │   │   ├── value
+    │                                           │               │   │   │   │   ├── Value
+    │                                           │               │   │   │   │   │   └── NUM
+    │                                           │               │   │   │   │   │       └── 1
+    │                                           │               │   │   │   │   ├── value
+    │                                           │               │   │   │   │   ├── optional_logic
+    │                                           │               │   │   │   │   └── optional_logic
+    │                                           │               │   │   │   ├── comparisons
+    │                                           │               │   │   │   ├── optional_logic
+    │                                           │               │   │   │   └── optional_logic
+    │                                           │               │   │   └── optional_logic
+    │                                           │               │   ├── comparisons
+    │                                           │               │   └── CLPARENT
+    │                                           │               ├── OPCURL
+    │                                           │               ├── statement
+    │                                           │               │   ├── statement_w_endl
+    │                                           │               │   │   └── statement_w_endl
+    │                                           │               │   │       └── return
+    │                                           │               │   │           └── Return
+    │                                           │               │   │               └── RETURN
+    │                                           │               │   │                   └── SC
+    │                                           │               │   ├── NEWL
+    │                                           │               │   └── statement
+    │                                           │               ├── statement
+    │                                           │               ├── CLCURL
+    │                                           │               └── else_statement
+    │                                           └── statement
+    └── END
+        └── NEWL
